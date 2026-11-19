@@ -1,0 +1,7 @@
+# Quem precisa aprovar mudanças (juiz ≠ gerador). Troque @vmcosta01 pelo usuário do GitHub do dono.
+*                                   @vmcosta01
+/CONCEITOS-DESENVOLVIMENTO-IA.md    @vmcosta01
+/docs/PRD.md                        @vmcosta01
+/docs/SECURITY.md                   @vmcosta01
+/supabase/migrations/               @vmcosta01
+/packages/core/src/nota/            @vmcosta01

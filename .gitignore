@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.turbo/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+# Segredos (SECURITY.md) — só o .env.example é versionado
+.env
+.env.*
+!.env.example
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+# Material de terceiros: referência interna, não versionar
+*.pdf

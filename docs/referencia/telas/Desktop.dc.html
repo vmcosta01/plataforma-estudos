@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Painel — site e desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5BEA}a:hover{color:#1E40AF}
+</style>
+</helmet>
+<div style="min-height: 900px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14171F; display: flex; flex-wrap: wrap">
+  <nav aria-label="Navegação principal" style="flex: 1 1 220px; max-width: 260px; box-sizing: border-box; background: #FFFFFF; border-right: 1px solid #E3E6EC; padding: 24px 16px; display: flex; flex-direction: column; gap: 6px">
+    <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; padding: 0 12px 18px">[NOME DA PLATAFORMA]</span>
+    <sc-for list="{{nav}}" as="n" hint-placeholder-count="5">
+      <a href="#" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: {{n.w}}; color: {{n.c}}; background: {{n.bg}}">{{n.label}}</a>
+    </sc-for>
+    <div style="margin-top: 24px; padding: 12px; border-radius: 12px; background: #F0FDF4; border: 1px solid #BBF7D0; display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 13px; font-weight: 600; color: #166534">Sincronizado</span>
+      <span style="font-size: 12px; color: #5B6170; line-height: 1.4">Celular, site e desktop: você para num e continua no outro.</span>
+    </div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 14px; color: #5B6170">Analista Judiciário · área judiciária (exemplo)</span>
+        <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700">Boa noite, Victor</h1>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 12px; padding: 10px 16px; font-size: 14px"><b>87</b> dias para a prova</div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 12px; padding: 10px 16px; font-size: 14px"><b>7h</b> de 10h na semana</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start">
+      <div style="background: #2F5BEA; color: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85">Próximo passo</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.2">Direito Administrativo: atos administrativos</span>
+        <span style="font-size: 14px; opacity: 0.9">40 min · explicação guiada + 15 questões</span>
+        <a href="Sessao.dc.html" style="display: flex; justify-content: center; align-items: center; height: 48px; border-radius: 12px; background: #FFFFFF; color: #14171F; font-weight: 600; text-decoration: none">Começar</a>
+        <span style="font-size: 13px; opacity: 0.9">Depois: revisão de 12 cartões · ~10 min</span>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 16px; font-weight: 600">Mapa do edital</span>
+          <a href="#" style="font-size: 13px">Ver completo</a>
+        </div>
+        <sc-for list="{{topics}}" as="t" hint-placeholder-count="6">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-left: {{t.indent}}; min-height: 32px">
+            <span style="font-size: 14px; font-weight: {{t.w}}">{{t.name}}</span>
+            <span style="font-size: 12px; font-weight: 600; border-radius: 999px; padding: 3px 10px; color: {{t.fg}}; background: {{t.bg}}">{{t.label}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-size: 16px; font-weight: 600">O que o agente fez hoje</span>
+        <sc-for list="{{log}}" as="l" hint-placeholder-count="4">
+          <div style="display: flex; gap: 12px; align-items: flex-start">
+            <div style="width: 8px; height: 8px; margin-top: 6px; flex-shrink: 0; border-radius: 999px; background: {{l.c}}"></div>
+            <div style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; line-height: 1.4">{{l.text}}</span>
+              <span style="font-size: 12px; color: #5B6170">{{l.time}}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const nav = ['Hoje', 'Edital', 'Simulados', 'Revisão', 'Perfil'].map((label, i) => ({
+      label, w: i === 0 ? 600 : 400, c: i === 0 ? '#1E40AF' : '#3D4350', bg: i === 0 ? '#EEF2FF' : 'transparent'
+    }));
+    const lv = {
+      f: { label: 'forte', fg: '#166534', bg: '#DCFCE7' },
+      m: { label: 'médio', fg: '#854D0E', bg: '#FEF3C7' },
+      r: { label: 'fraco', fg: '#9A3412', bg: '#FFEDD5' },
+      n: { label: 'não visto', fg: '#3D4350', bg: '#EEF1F6' }
+    };
+    const raw = [
+      ['Direito Administrativo', 0, 'm'], ['Atos administrativos', 1, 'r'], ['Licitações e contratos', 1, 'm'], ['Agentes públicos', 1, 'n'],
+      ['Direito Constitucional', 0, 'f'], ['Direitos fundamentais', 1, 'f'], ['Processo Civil', 0, 'r']
+    ];
+    const topics = raw.map(([name, d, k]) => ({ name, indent: d ? '18px' : '0px', w: d ? 400 : 600, ...lv[k] }));
+    const log = [
+      { text: 'Encontrou a retificação do edital e incluiu 2 tópicos no plano', time: '14:10', c: '#C2410C' },
+      { text: 'Baixou e organizou 3 provas anteriores da mesma banca', time: '11:32', c: '#2F5BEA' },
+      { text: 'Gerou 15 questões de atos administrativos para hoje', time: '08:05', c: '#2F5BEA' },
+      { text: 'Reorganizou a semana porque você não estudou na quinta', time: '07:58', c: '#5B6170' }
+    ];
+    return { nav, topics, log };
+  }
+}
+</script>
+</body>
+</html>

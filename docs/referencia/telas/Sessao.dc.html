@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sessão guiada — celular</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5BEA}a:hover{color:#1E40AF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14171F; display: flex; flex-direction: column">
+  <div style="background: #FFFFFF; border-bottom: 1px solid #E3E6EC; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <a href="Main.dc.html" aria-label="Voltar" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #14171F; border-radius: 12px">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></a>
+      <div style="display: flex; flex-direction: column; flex-grow: 1">
+        <span style="font-size: 12px; color: #5B6170">Direito Administrativo</span>
+        <span style="font-size: 15px; font-weight: 600">Atos administrativos</span>
+      </div>
+      <span style="font-size: 12px; color: #5B6170">Etapa 3 de 6</span>
+    </div>
+    <div style="height: 6px; border-radius: 999px; background: #EEF1F6; overflow: hidden">
+      <div style="width: 50%; height: 100%; background: #2F5BEA; border-radius: 999px"></div>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; padding: 16px; display: flex; flex-direction: column; gap: 12px; overflow: hidden">
+    <div style="align-self: flex-start; max-width: 88%; background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 16px 16px 16px 4px; padding: 12px 14px; font-size: 14px; line-height: 1.5">
+      Os atributos do ato administrativo costumam ser lembrados pela sigla <b>PATI</b>: presunção de legitimidade, autoexecutoriedade, tipicidade e imperatividade. Vamos testar?
+    </div>
+    <div style="align-self: flex-end; max-width: 80%; background: #2F5BEA; color: #FFFFFF; border-radius: 16px 16px 4px 16px; padding: 10px 14px; font-size: 14px">Bora</div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; justify-content: space-between">
+        <span style="font-size: 12px; font-weight: 600; color: #5B6170">QUESTÃO GERADA · ESTILO DA BANCA</span>
+        <span style="font-size: 12px; color: #5B6170">1/15</span>
+      </div>
+      <span style="font-size: 14px; line-height: 1.5; font-weight: 500">Qual atributo permite que a Administração execute seus atos sem precisar de ordem judicial?</span>
+      <sc-for list="{{options}}" as="o" hint-placeholder-count="4">
+        <button type="button" onClick="{{o.pick}}" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 12px; border-radius: 12px; border: {{o.border}}; background: {{o.bg}}; font-family: inherit; font-size: 14px; color: #14171F; text-align: left; cursor: pointer">
+          <span style="width: 26px; height: 26px; flex-shrink: 0; border-radius: 999px; background: {{o.badge}}; color: {{o.badgeText}}; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">{{o.letter}}</span>
+          <span>{{o.text}}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{answered}}" hint-placeholder-val="{{ false }}">
+      <div style="align-self: flex-start; max-width: 92%; background: {{fbBg}}; border: 1px solid {{fbBorder}}; border-radius: 16px 16px 16px 4px; padding: 12px 14px; font-size: 14px; line-height: 1.5">
+        <b>{{fbTitle}}</b> {{fbText}}
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="background: #FFFFFF; border-top: 1px solid #E3E6EC; padding: 12px 16px; display: flex; gap: 10px; align-items: center">
+    <label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Pergunte à IA</label>
+    <input id="ask" type="text" placeholder="Pergunte qualquer coisa sobre o tema…" style="flex-grow: 1; height: 44px; border-radius: 12px; border: 1px solid #D5DAE3; padding: 0 12px; font-family: inherit; font-size: 14px; background: #F6F7F9; color: #14171F">
+    <button type="button" aria-label="Falar por voz" style="width: 44px; height: 44px; border-radius: 12px; border: none; background: #2F5BEA; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { picked: null }; }
+  renderVals() {
+    const correct = 'B';
+    const picked = this.state.picked;
+    const raw = [['A', 'Presunção de legitimidade'], ['B', 'Autoexecutoriedade'], ['C', 'Tipicidade'], ['D', 'Imperatividade']];
+    const options = raw.map(([letter, text]) => {
+      let border = '1px solid #E3E6EC', bg = '#FFFFFF', badge = '#EEF1F6', badgeText = '#14171F';
+      if (picked) {
+        if (letter === correct) { border = '2px solid #15803D'; bg = '#F0FDF4'; badge = '#15803D'; badgeText = '#FFFFFF'; }
+        else if (letter === picked) { border = '2px solid #C2410C'; bg = '#FFF7ED'; badge = '#C2410C'; badgeText = '#FFFFFF'; }
+      }
+      return { letter, text, border, bg, badge, badgeText, pick: () => this.setState({ picked: letter }) };
+    });
+    const ok = picked === correct;
+    return {
+      options,
+      answered: !!picked,
+      fbBg: ok ? '#F0FDF4' : '#FFF7ED',
+      fbBorder: ok ? '#BBF7D0' : '#FED7AA',
+      fbTitle: ok ? 'Isso!' : 'Quase.',
+      fbText: ok
+        ? 'Autoexecutoriedade é executar o ato diretamente, sem passar pelo Judiciário. Vou te mostrar as exceções na próxima.'
+        : 'A resposta é B, autoexecutoriedade. Vou colocar esse ponto na sua revisão de amanhã.'
+    };
+  }
+}
+</script>
+</body>
+</html>
