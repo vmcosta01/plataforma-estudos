@@ -26,7 +26,7 @@
 - 1.5 Spec de autenticação (e-mail + Google) → `docs/specs/SPEC-1.5-autenticacao.md`
 
 ## Blocked
-- CI rodando de verdade — precisa do repositório no GitHub.
+- CI no GitHub — os jobs não iniciam: "recent account payments have failed or your spending limit needs to be increased". O dono precisa ajustar em GitHub → Settings → Billing & plans e reexecutar o CI do PR #1.
 - Fase 2 — bloqueada até o gate da Fase 1 (itens 1–4 de Next).
 
 ## Backlog
