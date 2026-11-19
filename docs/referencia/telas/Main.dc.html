@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Hoje — celular</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2F5BEA}a:hover{color:#1E40AF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; font-family: Inter, system-ui, sans-serif; color: #14171F; display: flex; flex-direction: column">
+  <div style="flex-grow: 1; padding: 24px 20px 16px; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-size: 13px; color: #5B6170">Quarta, 18 de novembro</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Boa noite, Victor</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 14px; padding: 8px 12px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: {{accent}}">87</span>
+        <span style="font-size: 11px; color: #5B6170">dias p/ prova</span>
+      </div>
+    </div>
+
+    <div style="background: {{accent}}; color: #FFFFFF; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85">Próximo passo</span>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; line-height: 1.2">Direito Administrativo: atos administrativos</span>
+        <span style="font-size: 14px; opacity: 0.9">40 min · explicação guiada + 15 questões</span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <span style="font-size: 12px; background: rgba(255,255,255,0.18); border-radius: 999px; padding: 4px 10px">Tema que você mais errou</span>
+        <span style="font-size: 12px; background: rgba(255,255,255,0.18); border-radius: 999px; padding: 4px 10px">Cai muito na banca</span>
+      </div>
+      <a href="Sessao.dc.html" style="display: flex; justify-content: center; align-items: center; height: 48px; border-radius: 12px; background: #FFFFFF; color: #14171F; font-weight: 600; font-size: 16px; text-decoration: none">Começar</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; color: #5B6170">Revisão do dia</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">12 cartões</span>
+        <span style="font-size: 12px; color: #5B6170">~10 min</span>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; color: #5B6170">Simulado semanal</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Sábado</span>
+        <span style="font-size: 12px; color: #5B6170">60 questões · 3h</span>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E3E6EC; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <span style="font-size: 14px; font-weight: 600">Sua semana</span>
+        <span style="font-size: 12px; color: #5B6170">7h de 10h</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px">
+        <sc-for list="{{days}}" as="d" hint-placeholder-count="7">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+            <div style="width: 100%; height: 40px; border-radius: 8px; background: #EEF1F6; display: flex; align-items: flex-end; overflow: hidden">
+              <div style="width: 100%; height: {{d.h}}; background: {{d.c}}; border-radius: 8px"></div>
+            </div>
+            <span style="font-size: 11px; color: #5B6170">{{d.l}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 16px; padding: 14px; display: flex; gap: 12px; align-items: flex-start">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-size: 14px; font-weight: 600; color: #9A3412">Radar: edital retificado</span>
+        <span style="font-size: 13px; color: #5B6170; line-height: 1.4">O agente encontrou 2 tópicos novos e já incluiu no seu plano.</span>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Navegação principal" style="height: 72px; background: #FFFFFF; border-top: 1px solid #E3E6EC; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+    <a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: {{accent}}; font-size: 12px; font-weight: 600">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>Hoje</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5B6170; font-size: 12px">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6M4 12h10M4 19h7"></path><circle cx="18" cy="5" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg>Edital</a>
+    <a href="Simulado.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5B6170; font-size: 12px">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg>Simulados</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5B6170; font-size: 12px">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Perfil</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2F5BEA","options":["#2F5BEA","#0F766E","#6D28D9","#14171F"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#2F5BEA';
+    const raw = [['S', 100], ['T', 80], ['Q', 60], ['Q', 0], ['S', 0], ['S', 0], ['D', 0]];
+    const days = raw.map(([l, p], i) => ({ l, h: (p || 6) + '%', c: p ? accent : '#D5DAE3' }));
+    return { accent, days };
+  }
+}
+</script>
+</body>
+</html>

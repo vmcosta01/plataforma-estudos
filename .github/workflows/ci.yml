@@ -1,0 +1,64 @@
+# SPEC 1.7 — Gate de merge. Roda em todo PR e em push na main.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Instalar
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck e lint
+        run: pnpm lint
+
+      - name: Testes
+        run: pnpm test
+
+      - name: Seed sincronizado com packages/core
+        run: |
+          pnpm seed:gerar
+          git diff --exit-code supabase/seed.sql || (echo "supabase/seed.sql desatualizado: rode pnpm seed:gerar" && exit 1)
+
+      - name: Conferência do edital
+        run: pnpm edital:conferir
+
+      - name: Banco local (migrações + seed + RLS)
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q postgresql
+          export PATH=/usr/lib/postgresql/$(ls /usr/lib/postgresql | sort -n | tail -1)/bin:$PATH
+          bash scripts/testar-banco-local.sh
+
+      - name: Sem TODO/FIXME novos no núcleo
+        if: github.event_name == 'pull_request'
+        run: |
+          if git diff --unified=0 origin/${{ github.base_ref }}...HEAD -- packages/core | grep -E '^\+.*(TODO|FIXME)'; then
+            echo "TODO/FIXME novo em packages/core: resolva antes de declarar pronto." && exit 1
+          fi
+
+  segredos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
