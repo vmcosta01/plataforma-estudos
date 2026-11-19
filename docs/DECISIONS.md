@@ -59,3 +59,10 @@
 - **Decisão:** explicações e questões são geradas e revisadas; nada da apostila ou de cursos é reproduzido no app.
 - **Motivo:** direitos autorais e diferenciação.
 - **Status:** proposta (cuidado registrado na conversa de 18/11/2026; falta aprovação formal).
+
+## ADR-11 · 19/11/2026 · Questões de provas anteriores
+- **Decisão:**
+  - Reprodução literal, sem alterar a questão, sempre com a origem: banca, ano, órgão e cargo. Isso reforça o caráter informativo e de estudo.
+  - Canal de retirada: se alguma banca notificar, a questão sai do ar rápido.
+  - Separação no banco: questões reais de provas anteriores ficam separadas das questões inéditas geradas pela nossa IA, para dar para retirar umas sem afetar as outras.
+- **Status:** aprovada pelo dono.
