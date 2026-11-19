@@ -36,6 +36,20 @@ READ → UNDERSTAND → PLAN → IMPLEMENT → TEST → REVIEW → FIX → COMMI
 - Não copiar texto, exercícios ou estrutura da apostila ou de cursos comerciais para dentro do app. A apostila serve só para calibrar tópicos.
 - Questão só vai ao aluno com status `publicada` e revisor registrado.
 
+## Armadilhas conhecidas (não repetir)
+
+- **Trabalhe num clone do GitHub**, nunca numa cópia solta da pasta. A fonte da verdade é `https://github.com/vmcosta01/plataforma-estudos`, branch `main`.
+- **Nada direto na `main`.** Branch `feat/…`, `fix/…` ou `docs/…` → PR → CI verde → o dono aprova e faz o merge (ou autoriza por escrito).
+- **Antes de abrir PR**, rode e cole a saída no PR: `pnpm install`, `pnpm lint`, `pnpm test`, `pnpm seed:gerar` seguido de `git diff --exit-code supabase/seed.sql`.
+- **Segredos:** nunca pedir chave no chat, nunca imprimir o valor de uma variável (`echo`, `print`, logs). Para conferir, só teste se ela existe. O código lê a chave da revisora como `GHOSTCLI_API_KEY`; nomes com espaço não funcionam.
+- **Supabase na nuvem** (`syaijialseosppxhgfqp`): migração só com autorização do dono. Nunca editar uma migração já aplicada; criar uma nova. Rodar `bash scripts/testar-banco-local.sh` antes.
+- **Apostila em PDF:** não ler, não usar como fonte, não versionar (`*.pdf` está no `.gitignore`). Conteúdo é 100% original (ADR-5).
+- **Provas anteriores:** seguir a ADR-11 (reprodução literal com banca, ano, órgão e cargo; canal de retirada; separadas das questões inéditas).
+- **Nota e pesos:** contas com inteiros, nunca `float`; arredondamento conforme ADR-8. Nunca alterar sem aprovação.
+- **Caminho com espaços** (`E:\PLATAFORMA DE ESTUDOS`): sempre entre aspas nos comandos.
+- **CI falhou por cobrança/limite do GitHub** não é erro de código: avise o dono e pare.
+- **Ao terminar:** atualizar `docs/TASKS.md`, `docs/MEMORY.md` e criar `docs/HANDOFF_<fase>.md`; não deixar `TODO`/`FIXME` (o CI barra).
+
 ## Boundaries — não mudar sem aprovação do dono
 
 - `CONCEITOS-DESENVOLVIMENTO-IA.md`
