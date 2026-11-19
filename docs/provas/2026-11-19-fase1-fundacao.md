@@ -77,4 +77,4 @@ Mordidas: habilitação `>=` → `>` derruba 2 testes; regra "3ª casa ≥ 5" �
 - Migrações 1 (esquema) e 2 (RLS) aplicadas.
 - Seed aplicado: 9 disciplinas, 106 tópicos, 70 questões; hash dos tópicos `27fbf3a515b488e44fee49af135f7ec7` igual ao do banco local (mesmos IDs).
 - `rls_test.sql` rodado no Supabase real (em transação desfeita): **RLS: todos os testes passaram**; depois disso, 0 usuários, 0 questões, 0 matrículas (nada ficou para trás).
-- Migração 3 (endurecimento pedido pelo Security Advisor) testada localmente com mordida; **aguardando confirmação do dono para aplicar no Supabase**.
+- Migração 3 aplicada no Supabase em 19/11/2026 (autorizada pelo dono); `rls_test` passou de novo na nuvem; Security Advisor: 0 alertas.

@@ -12,8 +12,9 @@
 
 ## Current State
 - Funcionando localmente (com prova em `docs/provas/2026-11-19-fase1-fundacao.md`): monorepo, núcleo `@plataforma/core` (edital + nota, 23 testes), migrações com RLS testada, seed idempotente do edital, conferência automática, workflow de CI.
-- Supabase em nuvem com migrações 1–2 e seed (106 tópicos) e RLS testada; migração 3 pendente de confirmação do dono.
-- Não existe ainda: repositório GitHub, apps Expo/Next, Google OAuth configurado.
+- Supabase em nuvem com migrações 1–3 e seed (106 tópicos), RLS testada, Security Advisor limpo.
+- Repositório privado github.com/vmcosta01/plataforma-estudos; PR #1 (branch feat/fase1-fundacao) aberto; CI bloqueado por cobrança da conta GitHub.
+- Não existe ainda: apps Expo/Next, Google OAuth configurado.
 - Artefatos online: especificação (https://claude.ai/artifact/MzMJUvh5BgrAyDGoJpz2XF), planilha de concursos (https://claude.ai/artifact/54xPhtR9V2KXUs1jnkDmRT), telas (https://claude.ai/artifact/LRzVsubmL8kPLPXTaa5Dwh).
 
 ## Known Issues

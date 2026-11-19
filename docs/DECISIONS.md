@@ -49,7 +49,7 @@
 
 ## ADR-9 · 19/11/2026 · Projeto Supabase e endurecimento de segurança
 - **Decisão:** projeto `plataforma-estudos` (ref `syaijialseosppxhgfqp`), plano gratuito, região sa-east-1 (São Paulo), criado com autorização do dono. Funções de RLS movidas para o schema `privado` (fora da API), `search_path` fixo, uma política por ação e índices em todas as chaves estrangeiras (migração 3), atendendo o Security/Performance Advisor.
-- **Status:** migrações 1 e 2 e seed aplicados; migração 3 aguardando confirmação do dono no Supabase.
+- **Status:** migrações 1, 2 e 3 e seed aplicados (migração 3 autorizada pelo dono em 18/11/2026, 23:56); Security Advisor sem alertas; RLS testada na nuvem.
 
 ## ADR-10 · 19/11/2026 · Login com e-mail e Google
 - **Decisão:** e-mail com confirmação e Google OAuth (SPEC 1.5). Login com Apple a avaliar antes de publicar no iPhone.

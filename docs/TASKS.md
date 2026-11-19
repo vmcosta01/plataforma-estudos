@@ -3,15 +3,14 @@
 > Conceito #7. Em andamento: máximo 3 itens. Atualizado em 19/11/2026, 23h.
 
 ## Next
-1. **Dono:** confirmar no Supabase a migração 3 (endurecimento de segurança) — a confirmação expirou sem resposta.
-2. **Dono:** revisar e aprovar o PR `feat/fase1-fundacao` no GitHub (juiz ≠ gerador) e ativar a proteção da `main`.
-3. **Dono:** configurar o Google OAuth (passo a passo em `docs/specs/SPEC-1.5-autenticacao.md`).
-4. Conferência humana por amostragem do edital (`docs/specs/CONFERENCIA-EDITAL.md` §3).
-5. Aprovar formalmente PRD e ADR-1 a ADR-3; definir quem desenvolve.
-6. Resolver GAP do APP_FLOW: T8 sem questões publicadas.
+1. **Dono:** revisar e aprovar o PR `feat/fase1-fundacao` no GitHub (juiz ≠ gerador) e ativar a proteção da `main`.
+2. **Dono:** configurar o Google OAuth (passo a passo em `docs/specs/SPEC-1.5-autenticacao.md`).
+3. Conferência humana por amostragem do edital (`docs/specs/CONFERENCIA-EDITAL.md` §3).
+4. Aprovar formalmente PRD e ADR-1 a ADR-3; definir quem desenvolve.
+5. Resolver GAP do APP_FLOW: T8 sem questões publicadas.
 
 ## In Progress
-- Fase 1 — Fundação + edital: falta aplicar a migração 3 no Supabase, criar o repositório e configurar o Google.
+- Fase 1 — Fundação + edital: falta revisar/mesclar o PR #1, destravar o CI (cobrança) e configurar o Google.
 
 ## Completed
 - Fase 0 — documentos obrigatórios → `docs/`, `HANDOFF_fase0-planejamento.md`
@@ -21,7 +20,7 @@
 - Núcleo: edital e nota com 23 testes e mordida → `packages/core/`, `docs/provas/2026-11-19-fase1-fundacao.md`
 - 1.6 Seed gerado + conferência automática → `scripts/`, `supabase/seed.sql`
 - 1.7 CI e template de PR → `.github/`
-- 1.2 Projeto Supabase `plataforma-estudos` (São Paulo) com migrações 1–2 e seed; RLS testada na nuvem → `docs/provas/`
+- 1.2 Projeto Supabase `plataforma-estudos` (São Paulo) com migrações 1–3 e seed; Security Advisor limpo; RLS testada na nuvem → `docs/provas/`
 - Edital conferido contra o PDF oficial: 106 tópicos, arredondamento do item 14.2 → `docs/specs/CONFERENCIA-EDITAL.md`
 - 1.5 Spec de autenticação (e-mail + Google) → `docs/specs/SPEC-1.5-autenticacao.md`
 
